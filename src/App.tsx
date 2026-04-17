@@ -524,6 +524,9 @@ const Stats = () => {
 
 const Testimonials = () => {
   const container = useRef(null);
+  const slideRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   const reviews = [
     { name: "Maximilian Voss", role: "Projektleiter", company: "Aethelgard Bau", text: "Vanguard hat unsere Großbaustelle lückenlos abgesichert. Die Professionalität und Disziplin des Personals ist auf dem Markt unerreicht." },
@@ -532,49 +535,115 @@ const Testimonials = () => {
     { name: "Elena Novak", role: "Portfolio Managerin", company: "Horizon Real Estate", text: "Zuverlässiger Objektschutz mit lückenloser Dokumentation. Wir fühlen uns bei der Absicherung unserer Portfolios bestens aufgehoben." },
   ];
 
+  const animateSlide = (direction: 'next' | 'prev', newIndex: number) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setCurrentIndex(newIndex);
+        setIsAnimating(false);
+      }
+    });
+
+    const xMove = direction === 'next' ? -50 : 50;
+
+    tl.to(slideRef.current, {
+      opacity: 0,
+      x: xMove,
+      duration: 0.4,
+      ease: 'power2.in'
+    })
+    .set(slideRef.current, { x: -xMove })
+    .to(slideRef.current, {
+      opacity: 1,
+      x: 0,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+  };
+
+  const next = () => {
+    const nextIndex = (currentIndex + 1) % reviews.length;
+    animateSlide('next', nextIndex);
+  };
+
+  const goTo = (index: number) => {
+    if (index === currentIndex || isAnimating) return;
+    const direction = index > currentIndex ? 'next' : 'prev';
+    animateSlide(direction, index);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [currentIndex, isAnimating]);
+
   useGSAP(() => {
-    gsap.from('.review-card', {
+    gsap.from('.testimonial-header', {
       scrollTrigger: {
         trigger: container.current,
         start: 'top 85%',
         toggleActions: 'play none none none'
       },
       opacity: 0,
-      scale: 0.95,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: 'power3.out',
-      clearProps: 'all'
+      y: 30,
+      duration: 1,
+      ease: 'power3.out'
     });
   }, { scope: container });
 
   return (
     <section ref={container} className="py-24 bg-vanguard-black overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-vanguard-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="testimonial-header text-center mb-16">
           <span className="font-mono text-vanguard-accent text-xs tracking-widest uppercase mb-4 block">Kundenstimmen</span>
           <h2 className="text-4xl md:text-6xl font-black">Was unsere Partner sagen.</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {reviews.map((r, i) => (
-            <div key={i} className="review-card glass-card p-10 relative group hover:bg-white/5 transition-colors">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-vanguard-accent flex items-center justify-center font-bold text-xl text-white">
-                  {r.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">{r.name}</h4>
-                  <p className="text-xs text-vanguard-accent font-mono uppercase tracking-widest">{r.role} | {r.company}</p>
-                </div>
+        <div className="relative max-w-4xl mx-auto">
+          <div ref={slideRef} className="review-card glass-card p-12 md:p-20 relative group min-h-[400px] flex flex-col justify-center">
+            <div className="flex flex-col md:flex-row items-center gap-6 mb-8 text-center md:text-left">
+              <div className="w-20 h-20 rounded-full bg-vanguard-accent flex items-center justify-center font-bold text-3xl text-white shadow-xl shadow-vanguard-accent/20">
+                {reviews[currentIndex].name.charAt(0)}
               </div>
-              <p className="text-vanguard-silver/70 italic leading-relaxed">"{r.text}"</p>
-              
-              <div className="absolute top-6 right-10 text-6xl font-serif text-white/5 group-hover:text-vanguard-accent/10 transition-colors">
-                &ldquo;
+              <div>
+                <h4 className="font-bold text-2xl mb-1">{reviews[currentIndex].name}</h4>
+                <p className="text-sm text-vanguard-accent font-mono uppercase tracking-widest">
+                  {reviews[currentIndex].role} <span className="mx-2 opacity-30">|</span> {reviews[currentIndex].company}
+                </p>
               </div>
             </div>
-          ))}
+            
+            <p className="text-xl md:text-2xl text-vanguard-silver/90 italic leading-relaxed text-center md:text-left">
+              &ldquo;{reviews[currentIndex].text}&rdquo;
+            </p>
+            
+            <div className="absolute top-10 right-10 md:top-20 md:right-20 text-9xl font-serif text-white/5 pointer-events-none">
+              &ldquo;
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center mt-12">
+            <div className="flex gap-3">
+              {reviews.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  className={`w-3 h-3 transition-all duration-300 ${
+                    i === currentIndex 
+                      ? 'bg-vanguard-accent w-10' 
+                      : 'bg-white/20 hover:bg-white/40'
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

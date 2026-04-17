@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# VANGUARD SECURITY GmbH - Premium Security Services & Site Logistics
 
-# Run and deploy your AI Studio app
+A modern, high-performance, and SEO-optimized web application for **VANGUARD SECURITY GmbH**, specializing in site protection and construction logistics in Germany.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
+- **High-End Corporate Design:** Dark, clean, and professional interface using Tailwind CSS and Framer Motion.
+- **Smart Contact Form:** Integrated quote request form.
+- **Serverless Architecture:** Ready for **Netlify** deployment with a Netlify Function for email management.
+- **SEO Optimization:** Comprehensive meta tags, H1-H3 semantic structure, and Open Graph for WhatsApp/Social Media previews.
+- **Mobile-First Compatibility:** Smooth user experience across all devices.
 
-View your app in AI Studio: https://ai.studio/apps/a8bf0fe4-8b38-4118-9425-1e18517ffbca
+## 🛠 Technologies
+- **Frontend:** React 18, TypeScript, Vite.
+- **Styling:** Tailwind CSS.
+- **Animations:** Motion (Framer Motion).
+- **Backend (Emails):** Nodemailer with Strato SMTP support.
+- **Deployment:** Netlify (via `netlify.toml` and `/netlify/functions`).
 
-## Run Locally
+## ⚙️ Deployment Configuration (Netlify)
 
-**Prerequisites:**  Node.js
+To make the contact form work on Netlify, you must configure the following environment variables in your Netlify administration panel:
 
+| Variable | Value |
+| :--- | :--- |
+| `SMTP_HOST` | `smtp.strato.de` |
+| `SMTP_PORT` | `465` (or 587) |
+| `SMTP_USER` | Your Strato email address |
+| `SMTP_PASS` | Your email password |
+| `CONTACT_DESTINATION` | The address that will receive inquiries |
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Project Structure
+- `/src`: React components and application logic.
+- `/netlify/functions`: Secure backend logic for sending emails.
+- `index.html`: Entry point with SEO and Favicon configuration.
+- `netlify.toml`: Redirects and build commands configuration.
+
+## 🏗 Local Installation
+1. `npm install`
+2. `npm run dev` to launch the development server.
+3. `npm run build` to generate production files in `/dist`.
+
+---
+*Developed for VANGUARD SECURITY GmbH - Expertise & Excellence in Security.*

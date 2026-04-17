@@ -89,24 +89,25 @@ const LegalModal = ({ type, onClose }: { type: 'impressum' | 'datenschutz', onCl
       body: `VANGUARD SECURITY GmbH
 Premium Sicherheitsdienst & Baulogistik
 
-Musterstraße 123
-10115 Berlin
+Hauptstr. 336
+65760 Eschborn
+Deutschland
 
 Vertreten durch:
-Max Mustermann (Geschäftsführer)
+Tülay Akcan (Geschäftsführerin)
 
 Kontakt:
-Telefon: +49 (0) 123 456 789
+Telefon: +49 174 3498768
 E-Mail: kontakt@vanguard-security.de
 
 Registereintrag:
 Eintragung im Handelsregister.
-Registergericht: Amtsgericht Berlin
-Registernummer: HRB 123456
+Registergericht: Amtsgericht Frankfurt am Main
+Registernummer: HRB 137233
 
 Umsatzsteuer-ID:
 Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
-DE 123456789`
+xxxxxxx`
     },
     datenschutz: {
       title: "Datenschutz",
@@ -644,7 +645,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h5 className="font-bold opacity-50 uppercase text-xs tracking-widest mb-1">Telefon</h5>
-                  <p className="text-lg font-bold">+49 (0) 123 456 789</p>
+                  <p className="text-lg font-bold">+49 174 3498768</p>
                 </div>
               </div>
               
@@ -664,7 +665,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h5 className="font-bold opacity-50 uppercase text-xs tracking-widest mb-1">Adresse</h5>
-                  <p className="text-lg font-bold">Musterstraße 123, 10115 Berlin</p>
+                  <p className="text-lg font-bold">Hauptstr. 336, 65760 Eschborn</p>
                 </div>
               </div>
 

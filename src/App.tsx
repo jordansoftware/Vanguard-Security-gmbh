@@ -247,12 +247,13 @@ const Hero = () => {
         <div className="max-w-3xl">
           <div className="hero-sub font-mono text-vanguard-accent text-xs tracking-[0.4em] uppercase mb-6 flex items-center gap-4">
             <span className="w-12 h-[1px] bg-vanguard-accent" />
-            Premium Sicherheitsdienst & Baulogistik
+            PREMIUM SICHERHEITSDIENST. BAUSTELLENBEWACHUNG MIT SYSTEM
           </div>
           
-          <h1 className="hero-title text-5xl md:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter">
-            PREMIUM SICHERHEITSDIENST. <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vanguard-accent to-vanguard-silver">BAUSTELLENBEWACHUNG</span> MIT SYSTEM.
+          <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter uppercase">
+            PREMIUM <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vanguard-accent to-vanguard-silver">SICHERHEITSDIENST</span> <br/>
+            & BAULOGISTIK
           </h1>
           
           <p className="hero-desc text-lg md:text-xl text-vanguard-silver/70 mb-10 max-w-xl leading-relaxed">

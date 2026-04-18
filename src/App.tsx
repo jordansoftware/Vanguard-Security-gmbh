@@ -287,27 +287,27 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         <div className="max-w-3xl">
-          <div className="hero-sub font-mono text-vanguard-accent text-xs tracking-[0.4em] uppercase mb-6 flex items-center gap-4">
-            <span className="w-12 h-[1px] bg-vanguard-accent" />
+          <div className="hero-sub font-mono text-vanguard-accent text-base sm:text-2xl lg:text-[36px] lg:leading-[37px] font-bold lg:w-[669px] lg:h-[148px] tracking-[0.05em] uppercase mb-6 flex items-center gap-4 flex-wrap sm:flex-nowrap">
+            <span className="w-8 sm:w-16 h-[2px] bg-vanguard-accent shrink-0" />
             PREMIUM SICHERHEITSDIENST. BAUSTELLENBEWACHUNG MIT SYSTEM
           </div>
           
-          <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter uppercase">
+          <h1 className="hero-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter uppercase">
             PREMIUM <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-vanguard-accent to-vanguard-silver">SICHERHEITSDIENST</span> <br/>
             & BAULOGISTIK
           </h1>
           
-          <p className="hero-desc text-lg md:text-xl text-vanguard-silver/70 mb-10 max-w-xl leading-relaxed">
+          <p className="hero-desc text-base md:text-xl text-vanguard-silver/70 mb-10 max-w-xl leading-relaxed">
             VANGUARD SECURITY GmbH ist Ihr Partner für exzellenten Objektschutz und effiziente Baulogistik in Deutschland. Wir schützen Werte, koordinieren komplexe Abläufe und garantieren maximale Sicherheit.
           </p>
           
-          <div className="flex flex-wrap gap-4">
-            <button className="hero-btn bg-vanguard-accent text-white px-10 py-5 rounded-none font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="hero-btn bg-vanguard-accent text-white px-6 py-4 sm:px-10 sm:py-5 rounded-none font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3">
               Jetzt Anfrage senden
               <ChevronRight size={18} />
             </button>
-            <button className="hero-btn border border-white/20 bg-white/5 backdrop-blur-sm text-white px-10 py-5 rounded-none font-bold uppercase tracking-widest hover:border-vanguard-accent transition-all">
+            <button className="hero-btn border border-white/20 bg-white/5 backdrop-blur-sm text-white px-6 py-4 sm:px-10 sm:py-5 rounded-none font-bold uppercase tracking-widest hover:border-vanguard-accent transition-all text-center">
               Leistungen ansehen
             </button>
           </div>

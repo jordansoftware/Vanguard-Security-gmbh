@@ -212,7 +212,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-xl md:text-3xl tracking-tighter leading-none">VANGUARD</span>
-            <span className="text-[10px] md:text-sm font-mono tracking-[0.3em] text-vanguard-accent">SECURITY GmbH</span>
+            <span className="text-[15px] font-bold font-mono tracking-[0.3em] text-vanguard-accent">SECURITY GmbH</span>
           </div>
         </a>
 

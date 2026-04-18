@@ -210,7 +210,7 @@ const Navbar = () => {
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-center">
             <span className="font-bold text-2xl md:text-4xl tracking-tighter leading-none">VANGUARD</span>
             <span className="text-[12px] md:text-[18px] font-bold font-mono tracking-[0.3em] text-vanguard-accent">SECURITY GmbH</span>
           </div>
@@ -271,7 +271,7 @@ const Hero = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative min-h-screen flex items-center pt-20 grid-bg overflow-hidden">
+    <section ref={container} className="relative min-h-screen flex items-center pt-32 md:pt-48 grid-bg overflow-hidden">
       {/* Animated Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 

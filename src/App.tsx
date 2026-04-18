@@ -199,31 +199,31 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-vanguard-black/90 backdrop-blur-md py-4 border-b border-white/10' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-vanguard-black/95 backdrop-blur-md py-2 border-b border-white/10' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="flex items-center gap-4 group">
-          <div className="w-10 h-10 md:w-20 md:h-20 relative overflow-hidden">
+          <div className="w-16 h-16 md:w-32 md:h-32 relative overflow-hidden flex items-center justify-center">
             <img 
               src="https://i.ibb.co/fVFpyHpf/logo.png" 
               alt="VANGUARD SECURITY Logo" 
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-xl md:text-3xl tracking-tighter leading-none">VANGUARD</span>
-            <span className="text-[15px] font-bold font-mono tracking-[0.3em] text-vanguard-accent">SECURITY GmbH</span>
+            <span className="font-bold text-2xl md:text-4xl tracking-tighter leading-none">VANGUARD</span>
+            <span className="text-[12px] md:text-[18px] font-bold font-mono tracking-[0.3em] text-vanguard-accent">SECURITY GmbH</span>
           </div>
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {['Leistungen', 'Über uns', 'Prozess', 'Kontakt'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-xs font-semibold uppercase tracking-widest hover:text-vanguard-accent transition-colors">
+            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm font-bold uppercase tracking-widest hover:text-vanguard-accent transition-colors">
               {item}
             </a>
           ))}
-          <a href="#anfrage" className="bg-vanguard-accent text-white px-6 py-2 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+          <a href="#anfrage" className="bg-vanguard-accent text-white px-8 py-3 rounded-sm text-sm font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-lg shadow-vanguard-accent/20">
             Anfrage senden
           </a>
         </div>

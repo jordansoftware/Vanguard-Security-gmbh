@@ -204,7 +204,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-4 group">
           <div className="w-16 h-16 md:w-32 md:h-32 relative overflow-hidden flex items-center justify-center">
             <img 
-              src="https://i.ibb.co/fVFpyHpf/logo.png" 
+              src="https://github.com/jordansoftware/Vanguard-Security-gmbh/blob/main/src/logo12.png?raw=true" 
               alt="VANGUARD SECURITY Logo" 
               className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -257,7 +257,8 @@ const Hero = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from('.hero-sub', { opacity: 0, y: 30, duration: 1, ease: 'power4.out' })
-      .from('.hero-title', { opacity: 0, y: 50, duration: 1, ease: 'power4.out' }, '-=0.6')
+      .from('.hero-title', { opacity: 0, x: -50, duration: 1, ease: 'power4.out' }, '-=0.6')
+      .from('.hero-logo-decoration', { opacity: 0, scale: 0.5, duration: 1.2, ease: 'back.out(1.7)' }, '-=0.8')
       .from('.hero-desc', { opacity: 0, y: 30, duration: 1, ease: 'power4.out' }, '-=0.6')
       .from('.hero-btn', { opacity: 0, scale: 0.9, stagger: 0.2, duration: 0.8, ease: 'back.out(1.7)' }, '-=0.4');
 
@@ -286,17 +287,29 @@ const Hero = () => {
       <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-vanguard-black to-transparent z-[1]" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <div className="hero-sub font-mono text-vanguard-accent text-base sm:text-2xl lg:text-[36px] lg:leading-[37px] font-bold lg:w-[669px] lg:h-[148px] tracking-[0.05em] uppercase mb-6 flex items-center gap-4 flex-wrap sm:flex-nowrap">
             <span className="w-8 sm:w-16 h-[2px] bg-vanguard-accent shrink-0" />
             PREMIUM SICHERHEITSDIENST. BAUSTELLENBEWACHUNG MIT SYSTEM
           </div>
           
-          <h1 className="hero-title text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tighter uppercase">
-            PREMIUM <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-vanguard-accent to-vanguard-silver">SICHERHEITSDIENST</span> <br/>
-            & BAULOGISTIK
-          </h1>
+          <div className="flex flex-col md:flex-row items-start md:items-stretch gap-6 lg:gap-12 mb-8 group/title">
+            <h1 className="hero-title text-3xl sm:text-5xl md:text-5xl lg:text-8xl font-extrabold leading-[1.1] tracking-tighter uppercase flex-1 order-2 md:order-1">
+              PREMIUM <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-vanguard-accent to-vanguard-silver">SICHERHEITSDIENST</span> <br/>
+              & BAULOGISTIK
+            </h1>
+
+            {/* Highly Visible Side Logo (Right) - Precision Placement as per request */}
+            <div className="hero-logo-decoration shrink-0 order-1 md:order-2 flex items-center justify-center">
+              <img 
+                src="https://github.com/jordansoftware/Vanguard-Security-gmbh/blob/main/src/logo12.png?raw=true" 
+                alt="VANGUARD Logo" 
+                className="object-contain filter drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] w-[160px] h-[126px] lg:w-[400px] lg:h-[315px] lg:mt-[10px] lg:-ml-[52px]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
           
           <p className="hero-desc text-base md:text-xl text-vanguard-silver/70 mb-10 max-w-xl leading-relaxed">
             VANGUARD SECURITY GmbH ist Ihr Partner für exzellenten Objektschutz und effiziente Baulogistik in Deutschland. Wir schützen Werte, koordinieren komplexe Abläufe und garantieren maximale Sicherheit.

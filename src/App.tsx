@@ -204,7 +204,7 @@ const Navbar = () => {
         <a href="#" className="flex items-center gap-4 group">
           <div className="w-16 h-16 md:w-32 md:h-32 relative overflow-hidden flex items-center justify-center">
             <img 
-              src="https://i.ibb.co/1GPXtZZ1/logo12.png" 
+              src="https://i.ibb.co/dJLRC2rr/logo12.webp" 
               alt="VANGUARD SECURITY Logo" 
               className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -303,7 +303,7 @@ const Hero = () => {
             {/* Highly Visible Side Logo (Right) - Precision Placement as per request */}
             <div className="hero-logo-decoration shrink-0 order-1 md:order-2 flex items-center justify-center">
               <img 
-                src="https://i.ibb.co/1GPXtZZ1/logo12.png" 
+                src="https://i.ibb.co/dJLRC2rr/logo12.webp" 
                 alt="VANGUARD Logo" 
                 className="object-contain filter drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] w-[160px] h-[126px] lg:w-[400px] lg:h-[315px] lg:mt-[10px] lg:-ml-[52px]"
                 referrerPolicy="no-referrer"
